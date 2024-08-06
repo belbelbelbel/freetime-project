@@ -22,7 +22,6 @@ export const Todo = () => {
                 complete: false
             }
             setTasks([...Tasks, newTask])
-            console.log("Task added")
             setInput("")
         } else {
             alert('Please enter a task')
@@ -30,10 +29,9 @@ export const Todo = () => {
     }
 
     const handlekeyBoardevent = (e: KeyboardEvent<HTMLInputElement>) => {
-        console.log(e.key)
         if (e.key === 'Enter') {
             addTodo();
-          }
+        }
     }
 
     const removeTodo = (id: number) => {
@@ -42,11 +40,44 @@ export const Todo = () => {
     }
 
     const toggleComplete = (id: number) => {
-        const newTasks = Tasks.map((task) =>
-            task.id === id ? { ...task, complete: !task.complete } : task
-        )
-        setTasks(newTasks)
+        const newTasks = Tasks.map(task => {
+            if (task.id === id) {
+                return { ...task, complete: !task.complete };
+            }
+            return task;
+        });
+        setTasks(newTasks);
+    } 
+
+    const thirdHighest = (arr: number[]) => {
+        if (arr.length < 3) {
+            alert('The array must contain at least three numbers');
+            return null;
+        }
+    
+        let firstnumber = -Infinity;
+        let secondnumber = -Infinity;
+        let thirdnumber = -Infinity;
+    
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > firstnumber) {
+                thirdnumber = secondnumber;
+                secondnumber = firstnumber;
+                firstnumber = arr[i];
+            } else if (arr[i] > secondnumber && arr[i] < firstnumber) {
+                thirdnumber = secondnumber;
+                secondnumber = arr[i];
+            } else if (arr[i] > thirdnumber && arr[i] < secondnumber) {
+                thirdnumber = arr[i];
+            }
+        }
+    
+        return thirdnumber;
     }
+    
+    const arrays = [10, 12, 13, 15, 34, 100];
+    console.log(thirdHighest(arrays)); // Output: 15
+    
 
     return (
         <div>
@@ -56,14 +87,14 @@ export const Todo = () => {
                     className='w-[80%] border-none outline-none px-[2vw] py-[0.8vw] rounded-[1vw]'
                     value={input}
                     placeholder='Todo...'
-                    onKeyDown={ handlekeyBoardevent}
+                    onKeyDown={handlekeyBoardevent}
                     onChange={handleChange}
                 />
                 <button className='text-[1vw] bg-white px-8 py-2 rounded-[3px]' onClick={addTodo}>Add</button>
             </div>
-            <ul className='w-[90%] mx-auto '>
+            <ul className='w-[90%] mx-auto'>
                 {Tasks.map((task) => (
-                    <li key={task.id} className={` flex flex-col  ${task.complete ? "line-through" : ""}`}>
+                    <li key={task.id} className={`flex flex-col ${task.complete ? "line-through" : ""}`}>
                         <div>
                             <input
                                 type="checkbox"
