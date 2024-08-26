@@ -13,7 +13,6 @@ export const Todo = () => {
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value)
     }
-
     const addTodo = () => {
         if (input) {
             const newTask: Task = {
@@ -27,18 +26,17 @@ export const Todo = () => {
             alert('Please enter a task')
         }
     }
-
     const handlekeyBoardevent = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             addTodo();
         }
     }
-
     const removeTodo = (id: number) => {
         const removedTasks = Tasks.filter((task) => task.id !== id)
+        //The condition task.id !== id means "keep all tasks whose id is not equal to the given id
+        console.log(removedTasks)
         setTasks(removedTasks)
     }
-
     const toggleComplete = (id: number) => {
         const newTasks = Tasks.map(task => {
             if (task.id === id) {
@@ -48,7 +46,6 @@ export const Todo = () => {
         });
         setTasks(newTasks);
     } 
-
     const thirdHighest = (arr: number[]) => {
         if (arr.length < 3) {
             alert('The array must contain at least three numbers');
@@ -76,9 +73,7 @@ export const Todo = () => {
     }
     
     const arrays = [10, 12, 13, 15, 34, 100];
-    console.log(thirdHighest(arrays)); // Output: 15
-    
-
+    // console.log(thirdHighest(arrays)); 
     return (
         <div>
             <div className='w-screen h-[6vw] bg-black flex items-center justify-center gap-[3vw]'>
@@ -103,7 +98,7 @@ export const Todo = () => {
                             />
                             {task.text}
                         </div>
-                        <button onClick={() => removeTodo(task.id)}>Remove</button>
+                        <button onClick={ () => removeTodo(task.id)}>Remove</button>
                     </li>
                 ))}
             </ul>
