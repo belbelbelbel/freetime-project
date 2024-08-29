@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
+import  { ChangeEvent, KeyboardEvent, useState } from 'react'
 
 interface Task {
     id: number;
@@ -71,8 +71,10 @@ export const Todo = () => {
     
         return thirdnumber;
     }
+
+    console.log(thirdHighest)
     
-    const arrays = [10, 12, 13, 15, 34, 100];
+    // const arrays = [10, 12, 13, 15, 34, 100];
     // console.log(thirdHighest(arrays)); 
     return (
         <div>

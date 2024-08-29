@@ -25,7 +25,7 @@ export const RandomPassword = () => {
     if (includeSymbols) {
       charArray = [...charArray, ...symbols];
     }
-
+    
     if (charArray.length > 0) {
       let newPassword = '';
       for (let i = 0; i < passwordLength; i++) {
@@ -36,7 +36,7 @@ export const RandomPassword = () => {
       setRandomPassword('');
     }
   };
-  
+
   return (
     <div className='w-screen flex flex-col justify-center gap-3 items-center h-screen bg-black text-black'>
       <div className='text-white text-[2.5vw]'>Password Generator</div>

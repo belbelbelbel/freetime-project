@@ -1,7 +1,11 @@
 import './App.css'
-import { RandomPassword } from './Component/RandomPassword'
-import { Todo } from './Component/Todo'
+// import { RandomPassword } from './Component/RandomPassword'
+// import { SlideTabsExample } from './Component/SlideTabs'
+// import { Todo } from './Component/Todo'
+import { DarkMode } from './DarkMode';
 function App() {
+
+  
   const FindTheThirdHighest = (a:number[]) => {
     if (a.length < 3) {
       alert('The array must contain at least three numbers')
@@ -34,7 +38,9 @@ function App() {
     <>
       <div>
         {/* <Todo /> */}
-        <RandomPassword/>
+        {/* <RandomPassword/> */}
+        {/* <SlideTabsExample/> */}
+        <DarkMode/>
       </div>
     </>
   )
