@@ -9,10 +9,10 @@ interface Task {
 export const Todo = () => {
     const [Tasks, setTasks] = useState<Task[]>([])
     const [input, setInput] = useState("")
-
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value)
     }
+    
     const addTodo = () => {
         if (input) {
             const newTask: Task = {

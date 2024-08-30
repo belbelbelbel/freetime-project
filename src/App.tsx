@@ -1,7 +1,7 @@
 import './App.css'
-// import { RandomPassword } from './Component/RandomPassword'
-// import { SlideTabsExample } from './Component/SlideTabs'
-// import { Todo } from './Component/Todo'
+import { Faqs } from './Component/Faqs';
+import { RandomPassword } from './Component/RandomPassword';
+import { SlideTabsExample } from './Component/SlideTabs';
 import { DarkMode } from './DarkMode';
 function App() {
 
@@ -40,7 +40,8 @@ function App() {
         {/* <Todo /> */}
         {/* <RandomPassword/> */}
         {/* <SlideTabsExample/> */}
-        <DarkMode/>
+        {/* <DarkMode/> */}
+        <Faqs/>
       </div>
     </>
   )
