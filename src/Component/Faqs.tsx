@@ -39,7 +39,7 @@ export const Faqs = () => {
     return (
         <div className='bg-black w-screen h-screen flex justify-center flex-col text-white items-center hero-faq'>
             <div className='text-[2vw] tracking-[2px] font-sans mb-2'> FAQS</div>
-            <div className='bg-white h-[70%] w-[70%] rounded-[7px] shadow-lg  text-black '>
+            <div className='bg-white h-[60%] w-[70%] rounded-[7px] shadow-lg  text-black '>
                 <div className='w-[80%] flex flex-col justify-center  mx-auto h-full'>
                     {
                         accordionData.map((item) => (
