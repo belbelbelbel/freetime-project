@@ -1,4 +1,5 @@
 import './App.css'
+import { Counter } from './Component/Counter';
 import { Faqs } from './Component/Faqs';
 import { RandomPassword } from './Component/RandomPassword';
 import { SlideTabsExample } from './Component/SlideTabs';
@@ -42,6 +43,7 @@ function App() {
         {/* <SlideTabsExample/> */}
         {/* <DarkMode/> */}
         <Faqs/>
+        {/* <Counter/> */}
       </div>
     </>
   )
